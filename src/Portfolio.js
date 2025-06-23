@@ -61,7 +61,7 @@ const Portfolio = () => {
             About Me
           </h2>
           <p className="text-slate-200 text-lg mb-4">
-            I'm a MERN stack developer with no experience (yet)!
+          Hi, I'm Nitin Kapoor — a Full Stack Developer specializing in the MERN stack. While I'm a fresher, I’ve built multiple real-world projects that demonstrate my ability to design, develop, and deploy full-fledged web applications.
           </p>
           <a
             href={process.env.PUBLIC_URL + "/nitin-res.pdf"}
