@@ -3,9 +3,19 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const projects = [
   {
+   title: "EdUnique",
+   description: "EdUnique, a skill-based education platform designed to help students and professionals enhance their learning experience. Includescore features like secure authentication, dynamic dashboards, real-time content updates. Built using NextJs and Supabase.",
+   link: "https://learningspace.edunique.in/"
+ },
+ {
+   title: "Simplifying Skills",
+   description: "Simplifying Skills is a learning portal that helps users master tech and non-tech skills through curated tutorials, practice exercises, and progress tracking. Developed using React and Node.js, it emphasizes simplicity and hands-on learning for beginners.",
+   link: "https://simplifyingskills.live"
+ },
+  {
     title: "E-Commerce Platform",
     description: "CottonRoad is a modern online shopping platform for fashion enthusiasts, built using the MERN stack. It replicates the features and user experience of cottonroad.store, showcasing up to 30 clothing products. It includes a clean product listing, filtering, a shopping cart and future plans for secure Razorpay payment integration",
-    link: "https://cottonroad-frontend.onrender.com" // Replace # with your live project link
+    link: "https://cottonroad-frontend.onrender.com" 
   },
   {
     title: "Fun MemeHustle",
@@ -16,7 +26,7 @@ const projects = [
     title: "Music Course Hub",
     description: "Music-CourseHub is an education-based web platform that allows music teachers to sell courses and manage students online. It supports various instruments and categories, includes features like course listings, user-friendly dashboards, and lesson access control. Teachers can easily manage content and students without technical knowledge",
     link: "https://github.com/nitinn0/music-course-hub"
-  }
+  },
 ];
 
 const socials = [
@@ -64,7 +74,7 @@ const Portfolio = () => {
           Hi, I'm Nitin Kapoor — a Full Stack Developer specializing in the MERN stack. While I'm a fresher, I’ve built multiple real-world projects that demonstrate my ability to design, develop, and deploy full-fledged web applications.
           </p>
           <a
-            href={process.env.PUBLIC_URL + "/nitin-res.pdf"}
+            href={process.env.PUBLIC_URL + "/NitinCV.pdf"}
             download
             className="inline-block text-white bg-orange-500 hover:bg-blue-900 font-medium px-4 py-2 rounded-full shadow transition-all text-base mt-2"
           >
@@ -74,29 +84,47 @@ const Portfolio = () => {
 
         {/* Projects Section */}
         <section className="p-10 bg-slate-900 rounded-3xl border-4 border-dotted border-blue-900 shadow-md">
-          <h2 className="text-2xl font-extrabold mb-4 flex items-center gap-2 font-playfair text-blue-300">
+          <h2 className="text-2xl font-extrabold mb-8 flex items-center gap-2 font-playfair text-blue-300">
             Projects
           </h2>
-          <div className="grid gap-8 md:grid-cols-2">
-            {projects.map((project, idx) => (
-              <div key={idx} className="bg-slate-800 rounded-2xl shadow p-6 flex flex-col justify-between border-2 border-dashed border-slate-600 hover:border-solid hover:border-orange-400 transition-all">
-                <div>
-                  <h3 className="text-lg font-bold mb-2 flex items-center gap-1 font-playfair text-blue-200">
-                    {project.title}
-                  </h3>
-                  <p className="text-slate-300 mb-4 italic">{project.description}</p>
-                </div>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto inline-block text-white bg-orange-500 hover:bg-blue-900 font-medium px-4 py-2 rounded-full shadow transition-all"
-                >
-                  View Live Project
-                </a>
-              </div>
-            ))}
-          </div>
+         <div className="grid gap-8 md:grid-cols-2">
+  {projects.map((project, idx) => {
+    // Set custom styles for specific projects
+    let bgClass = "bg-slate-800";
+    let borderHover = "hover:border-solid hover:border-orange-400";
+
+    if (project.title === "EdUnique") {
+      bgClass = "bg-gradient-to-br from-green-700 via-green-600 to-green-500";
+      borderHover = "hover:border-solid hover:border-green-200";
+    } else if (project.title === "Simplifying Skills") {
+      bgClass = "bg-gradient-to-br from-purple-700 via-purple-600 to-purple-500";
+      borderHover = "hover:border-solid hover:border-purple-200";
+    }
+
+    return (
+      <div
+        key={idx}
+        className={`rounded-2xl shadow p-6 flex flex-col justify-between border-2 border-dashed border-slate-600 ${bgClass} ${borderHover} transition-all`}
+      >
+        <div>
+          <h3 className="text-lg font-bold mb-2 flex items-center gap-1 font-playfair text-blue-200">
+            {project.title}
+          </h3>
+          <p className="text-slate-300 mb-4 italic">{project.description}</p>
+        </div>
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-auto inline-block text-white bg-orange-500 hover:bg-blue-900 font-medium px-4 py-2 rounded-full shadow transition-all"
+        >
+          View Live Project
+        </a>
+      </div>
+    );
+  })}
+</div>
+
           <div className="text-center mt-8 text-orange-400 text-sm">
             *Disclaimer: No bugs were harmed in the making of these projects.
           </div>
