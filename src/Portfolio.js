@@ -9,7 +9,7 @@ const projects = [
  },
  {
    title: "Simplifying Skills",
-   description: "Simplifying Skills is a learning portal that helps users master tech and non-tech skills through curated tutorials, practice exercises, and progress tracking. Developed using React and Node.js, it emphasizes simplicity and hands-on learning for beginners.",
+   description: "Simplifying Skills is a EdTech platform centered around their flagship assessment product **SkillSphere**, which evaluates psychometrics (OCEAN), socio-emotional intelligence, interests (Holland), etc. It is a learning portal that helps users master tech and non-tech skills through curated tutorials, practice exercises, and progress tracking.",
    link: "https://simplifyingskills.live"
  },
   {
@@ -81,9 +81,10 @@ const Portfolio = () => {
             Download CV
           </a>
         </section>
+        
 
         {/* Projects Section */}
-        <section className="p-10 bg-slate-900 rounded-3xl border-4 border-dotted border-blue-900 shadow-md">
+        <section className="p-10 mb-10 bg-slate-900 rounded-3xl border-4 border-dotted border-blue-900 shadow-md">
           <h2 className="text-2xl font-extrabold mb-8 flex items-center gap-2 font-playfair text-blue-300">
             Projects
           </h2>
@@ -129,6 +130,25 @@ const Portfolio = () => {
             *Disclaimer: No bugs were harmed in the making of these projects.
           </div>
         </section>
+
+        {/* Experience Section */}
+<section className="mb-10 bg-slate-900 border-4 border-dotted border-blue-700 p-10 rounded-3xl shadow-md">
+  <h2 className="text-2xl font-extrabold mb-4 flex items-center gap-2 font-playfair text-blue-300">
+    Experience
+  </h2>
+  <div className="flex flex-col gap-6">
+    <div className="bg-slate-800 rounded-2xl p-6 shadow border-2 border-dashed border-slate-600 hover:border-solid hover:border-orange-400 transition-all">
+      <h3 className="text-xl font-bold font-playfair text-blue-200 mb-2">
+        Full Stack Intern
+      </h3>
+      <h4 className="text-md text-slate-300 mb-2 italic">Dream AI</h4>
+      <p className="text-slate-400 mb-2">
+        August 2025 - Present
+      </p>
+    </div>
+  </div>
+</section>
+
 
         {/* Socials Section */}
         <section className="mt-12 bg-slate-800 border-4 border-dotted border-blue-900 p-10 rounded-3xl shadow-md">
