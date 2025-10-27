@@ -18,7 +18,7 @@ const projects = [
     link: "https://cottonroad-frontend.onrender.com" 
   },
   {
-    title: "Fun MemeHustle",
+    title: " MemeHustle",
     description: "MemeHustle is a unique marketplace where users can create, caption, and sell memes. Built with the MERN stack and Socket.io for real-time bidding, it also integrates Google Gemini AI to generate witty captions and describe meme vibes based on tags. Users can browse, bid, or upload memes while the leaderboard showcases top creators",
     link: "https://memehustle-8ljr.onrender.com/"
   },
@@ -33,148 +33,203 @@ const socials = [
   {
     name: "GitHub",
     url: "https://github.com/nitinn0",
-    icon: <FaGithub size={32} className="text-orange-400" />,
-    funny: "Where my code lives (and sometimes naps)."
+    icon: <FaGithub size={28} />,
   },
   {
     name: "LinkedIn",
     url: "https://linkedin.com/in/nitin-kapoor-2a614922a/",
-    icon: <FaLinkedin size={32} className="text-blue-400" />,
-    funny: "Let's pretend to be professional!"
+    icon: <FaLinkedin size={28} />,
   },
   {
     name: "Twitter",
     url: "https://twitter.com/nitinkap07",
-    icon: <FaTwitter size={32} className="text-slate-400" />,
-    funny: "Where I tweet bugs and call them features."
+    icon: <FaTwitter size={28} />,
   }
 ];
 
 const PROFILE_PHOTO = process.env.PUBLIC_URL + "/myself.jpg";
 
-const Portfolio = () => {
-  return (
-    <div className="w-full bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 min-h-screen">
-      <div className="max-w-5xl mx-auto px-4 sm:px-8 lg:px-16 py-6 font-lato">
-        {/* Profile Photo */}
-        <div className="flex flex-col items-center mb-8 mt-2">
+const Header = () => (
+  <header className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+    <div className="max-w-5xl mx-auto px-6 py-20 relative z-10">
+      <div className="flex flex-col items-center text-center">
+        <div className="mb-8 relative group">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
           <img
             src={PROFILE_PHOTO}
-            alt="Profile"
-            className="w-36 h-36 rounded-full shadow-lg object-cover mb-3"
+            alt="Nitin Kapoor"
+            className="w-32 h-32 rounded-full border-4 border-slate-700 shadow-2xl object-cover relative z-10 group-hover:scale-105 transition-transform"
           />
         </div>
-
-        {/* About Section */}
-        <section className="mb-10 bg-slate-900 border-4 border-dotted border-slate-600 p-10 rounded-3xl shadow-md">
-          <h2 className="text-2xl font-extrabold mb-2 flex items-center gap-2 font-playfair text-blue-300">
-            About Me
-          </h2>
-          <p className="text-slate-200 text-lg mb-4">
-          Hi, I'm Nitin Kapoor — a Full Stack Developer specializing in the MERN stack. While I'm a fresher, I’ve built multiple real-world projects that demonstrate my ability to design, develop, and deploy full-fledged web applications.
-          </p>
-          <a
-            href={process.env.PUBLIC_URL + "/NitinCV.pdf"}
-            download
-            className="inline-block text-white bg-orange-500 hover:bg-blue-900 font-medium px-4 py-2 rounded-full shadow transition-all text-base mt-2"
-          >
-            Download CV
-          </a>
-        </section>
         
-
-        {/* Projects Section */}
-        <section className="p-10 mb-10 bg-slate-900 rounded-3xl border-4 border-dotted border-blue-900 shadow-md">
-          <h2 className="text-2xl font-extrabold mb-8 flex items-center gap-2 font-playfair text-blue-300">
-            Projects
-          </h2>
-         <div className="grid gap-8 md:grid-cols-2">
-  {projects.map((project, idx) => {
-    // Set custom styles for specific projects
-    let bgClass = "bg-slate-800";
-    let borderHover = "hover:border-solid hover:border-orange-400";
-
-    if (project.title === "EdUnique") {
-      bgClass = "bg-gradient-to-br from-green-700 via-green-600 to-green-500";
-      borderHover = "hover:border-solid hover:border-green-200";
-    } else if (project.title === "Simplifying Skills") {
-      bgClass = "bg-gradient-to-br from-purple-700 via-purple-600 to-purple-500";
-      borderHover = "hover:border-solid hover:border-purple-200";
-    }
-
-    return (
-      <div
-        key={idx}
-        className={`rounded-2xl shadow p-6 flex flex-col justify-between border-2 border-dashed border-slate-600 ${bgClass} ${borderHover} transition-all`}
-      >
-        <div>
-          <h3 className="text-lg font-bold mb-2 flex items-center gap-1 font-playfair text-blue-200">
-            {project.title}
-          </h3>
-          <p className="text-slate-300 mb-4 italic">{project.description}</p>
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+          Nitin Kapoor
+        </h1>
+        
+        <p className="text-xl md:text-2xl text-slate-300 mb-3 font-light">
+          Full Stack Developer
+        </p>
+        
+        <div className="flex items-center gap-2 text-sm text-slate-400 mb-8">
+          <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+          <span>Available for opportunities</span>
         </div>
+
+        <p className="text-slate-400 max-w-2xl mb-8 leading-relaxed">
+         Crafting projects, debugging with a smile. <span className="text-lg font-bold uppercase">If it works it ships</span>
+        </p>
+
         <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-auto inline-block text-white bg-orange-500 hover:bg-blue-900 font-medium px-4 py-2 rounded-full shadow transition-all"
+          href={process.env.PUBLIC_URL + "/NitinCV.pdf"}
+          download
+          className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
         >
-          View Live Project
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Download Resume
         </a>
       </div>
-    );
-  })}
-</div>
+    </div>
+    
+    <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
+  </header>
+);
 
-          <div className="text-center mt-8 text-orange-400 text-sm">
-            *Disclaimer: No bugs were harmed in the making of these projects.
+const Portfolio = () => {
+  return (
+    <div className="w-full bg-slate-900 min-h-screen">
+      <Header />
+      
+      <div className="max-w-5xl mx-auto px-6 py-16">
+        {/* About Section */}
+        <section className="mb-20">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-12 h-px bg-gradient-to-r from-blue-500 to-transparent"></div>
+            <h2 className="text-3xl font-bold text-white">About</h2>
+          </div>
+          
+          <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50 hover:border-slate-600/50 transition-all">
+            <p className="text-slate-300 text-lg leading-relaxed">
+              Hi, I'm Nitin Kapoor — a Full Stack Developer specializing in the MERN stack. While I'm a fresher, I've built multiple real-world projects that demonstrate my ability to design, develop, and deploy full-fledged web applications.
+            </p>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section className="mb-20">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-12 h-px bg-gradient-to-r from-purple-500 to-transparent"></div>
+            <h2 className="text-3xl font-bold text-white">Projects</h2>
+          </div>
+          
+          <div className="grid gap-6 md:grid-cols-2">
+            {projects.map((project, idx) => (
+              <div
+                key={idx}
+                className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-slate-600/50 transition-all hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1"
+              >
+                <div className="flex flex-col h-full">
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
+                  
+                  <div className="mt-auto pt-4">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors group-hover:gap-3"
+                    >
+                      View Project
+                      <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* Experience Section */}
-<section className="mb-10 bg-slate-900 border-4 border-dotted border-blue-700 p-10 rounded-3xl shadow-md">
-  <h2 className="text-2xl font-extrabold mb-4 flex items-center gap-2 font-playfair text-blue-300">
-    Experience
-  </h2>
-  <div className="flex flex-col gap-6">
-    <div className="bg-slate-800 rounded-2xl p-6 shadow border-2 border-dashed border-slate-600 hover:border-solid hover:border-orange-400 transition-all">
-      <h3 className="text-xl font-bold font-playfair text-blue-200 mb-2">
-        Full Stack Intern
-      </h3>
-      <h4 className="text-md text-slate-300 mb-2 italic">Dream AI</h4>
-      <p className="text-slate-400 mb-2">
-        August 2025 - Present
-      </p>
-    </div>
-  </div>
-</section>
+        <section className="mb-20">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-12 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
+            <h2 className="text-3xl font-bold text-white">Experience</h2>
+          </div>
+          
+          <div className="relative pl-8 border-l-2 border-slate-700">
+            <div className="absolute left-[-9px] top-0 w-4 h-4 bg-green-500 rounded-full shadow-lg shadow-green-500/50"></div>
+            
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-slate-600/50 transition-all">
+              <h3 className="text-xl font-bold text-white mb-2">
+                Full Stack Intern
+              </h3>
+              <p className="text-blue-400 mb-2 font-medium">Dream AI</p>
+              <p className="text-slate-500 text-sm">August 2025 - Present</p>
+            </div>
+          </div>
+        </section>
 
-
-        {/* Socials Section */}
-        <section className="mt-12 bg-slate-800 border-4 border-dotted border-blue-900 p-10 rounded-3xl shadow-md">
-          <h2 className="text-2xl font-extrabold mb-6 flex items-center gap-2 font-playfair text-blue-300">
-            Socials
-          </h2>
-       
-          <div className="flex flex-col gap-6 md:flex-row md:gap-12 justify-center items-center">
+        {/* Connect Section */}
+        <section className="mb-12">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-12 h-px bg-gradient-to-r from-pink-500 to-transparent"></div>
+            <h2 className="text-3xl font-bold text-white">Connect</h2>
+          </div>
+          
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             {socials.map((social, idx) => (
               <a
                 key={idx}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center bg-slate-900 px-10 py-7 rounded-2xl shadow hover:bg-orange-100 transition-all border-2 border-slate-600"
+                className="group flex items-center gap-3 bg-slate-800/50 backdrop-blur-sm px-6 py-4 rounded-xl border border-slate-700/50 hover:border-slate-600/50 transition-all hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1"
               >
-                <span className="mb-2">{social.icon}</span>
-                <span className="font-bold font-playfair text-lg text-blue-200">{social.name}</span>
-                <span className="text-xs text-slate-400 mt-2 italic text-center">{social.funny}</span>
+                <span className="text-slate-400 group-hover:text-blue-400 transition-colors">
+                  {social.icon}
+                </span>
+                <span className="text-white font-medium">{social.name}</span>
+                <svg className="w-4 h-4 text-slate-600 group-hover:text-blue-400 transition-all group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
               </a>
             ))}
           </div>
         </section>
+
+        {/* Footer */}
+        <footer className="text-center pt-12 border-t border-slate-800">
+          <p className="text-slate-500 text-sm">
+            Built with React • Designed with passion
+          </p>
+        </footer>
       </div>
+
+      <style jsx>{`
+        @keyframes grid {
+          0% { background-position: 0 0; }
+          100% { background-position: 50px 50px; }
+        }
+        .bg-grid-pattern {
+          background-image: 
+            linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
+          background-size: 50px 50px;
+          animation: grid 20s linear infinite;
+        }
+      `}</style>
     </div>
   );
 };
 
-export default Portfolio; 
+export default Portfolio;

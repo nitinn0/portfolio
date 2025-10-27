@@ -4,7 +4,7 @@ import Portfolio from "./Portfolio";
 function App() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Portfolio />
     </div>
   );
