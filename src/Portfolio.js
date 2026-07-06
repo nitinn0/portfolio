@@ -10,7 +10,7 @@ const projects = [
  {
    title: "Simplifying Skills",
    description: "Simplifying Skills is a EdTech platform centered around their flagship assessment product **SkillSphere**, which evaluates psychometrics (OCEAN), socio-emotional intelligence, interests (Holland), etc. It is a learning portal that helps users master tech and non-tech skills through curated tutorials, practice exercises, and progress tracking.",
-   link: "https://simplifyingskills.live"
+   link: "https://app.simplifyingskills.com"
  },
   {
     title: "E-Commerce Platform",
@@ -81,7 +81,7 @@ const Header = () => (
         </p>
 
         <a
-          href={process.env.PUBLIC_URL + "/NitinCV.pdf"}
+          href={process.env.PUBLIC_URL + "/NitinCv01.pdf"}
           download
           className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
         >
@@ -176,6 +176,14 @@ const Portfolio = () => {
               <p className="text-blue-400 mb-2 font-medium">Dream AI</p>
               <p className="text-slate-500 text-sm">August 2025 - Present</p>
             </div>
+
+            <div className="bg-slate-800/50 backdrop-blur-sm mt-4 rounded-2xl p-6 border border-slate-700/50 hover:border-slate-600/50 transition-all">
+              <h3 className="text-xl font-bold text-white mb-2">
+                Full Stack Developer
+              </h3>
+              <p className="text-blue-400 mb-2 font-medium">Simplifying Skills</p>
+              <p className="text-slate-500 text-sm">Jan 2026 - Present</p>
+            </div>
           </div>
         </section>
 
@@ -207,12 +215,7 @@ const Portfolio = () => {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="text-center pt-12 border-t border-slate-800">
-          <p className="text-slate-500 text-sm">
-            Built with React • Designed with passion
-          </p>
-        </footer>
+
       </div>
 
       <style jsx>{`
